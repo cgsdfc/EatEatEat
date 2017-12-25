@@ -1,11 +1,50 @@
-<html>
+<!DOCTYPE html>
+<html lang="us-en">
+  <head>
+    <meta charset="utf-8" />
+    <title>EatEatEat Order your delicious food in a second</title>
+    <style>
+.charm {
+  background-color:#44B78B;
+  color:#0C3C47;
+  margin:20px;
+  padding:20px;
+}	
+    </style>
+  </head>
+  <body>
+    <div class="charm">
+      <h1 align=center>What is EatEatEat?</h1>
+      <p>EatEatEat is a fast food delivery site where you can rush in and pick
+      your favourite food from the restaurants from <em>all over the world</em>.
+      </p>
+    </div>
+    <div>
+      <h2>Our Belief</h2>
+      <p>We believe that in the realm of fast food delivery these are the most important:</p>
+      <p>The variety of fast food should be as vast as possible.
+      The makers of this site were deeply addictive to fast food when they were working
+      for a Lab as their life was too busy for a well schedualed meal at the canteen.
+      What's worse, at that time the available kinds of dishes and restaurants were
+      very limited, so their receipts had to repeat very often.
+      We made this site to prevent tragedy like this from happening on you once and for good.</p>
+      <p>The time you have to wait for the arrival of the food should must minimized.
+      Waiting is a waste of your precious time to get your food. Now that you <em>are that busy</em>
+      to have fast food, we dare not waste you one more single minute than it has to be. For that, we
+      optimize every stage of the process.<br> <a href="Yet to make">See here to learn how we achieve the leading speed
+        of fast food delivery.</a>
+      </p>
+    </div>
 
-  {% if not dishes %}
-  <p>No Dishes available</p>
-  {% else %}
-  {% for dish in dishes %}
-  <img src="{{ dish.image.url}}" width="{{ dish.image.width }}" height="{{ dish.image.height }}" alt="img"> {{ dish.name }} </img>
-  {% endfor %}
-  {% endif %}
-
+    <div class=delicious>
+      <h2>Have a look at what we provide</h2>
+    </div>
+    <div>
+      <p><a href="{% url 'dishes' %}">Delicious Food from restaurants all over the world.</a>
+      Your beloved fried chicken included.</p>
+      <p><a href="To all restaurants">Popular restaurants we have here.</a> Check it out!</p>
+    </div>
+</body>
 </html>
+
+

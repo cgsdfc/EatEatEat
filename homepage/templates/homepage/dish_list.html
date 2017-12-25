@@ -1,0 +1,14 @@
+<html>
+
+  {% if not dish_list %}
+  <p>No dish_list available</p>
+  {% else %}
+  {% for dish in dish_list %}
+  <div>
+    <a href="{{ dish.get_absolute_url }}">{{ dish.name }}</a>
+    <img src="{{ dish.image.url}}" width="{{ dish.image.width }}" height="{{ dish.image.height }}" alt="img"></img>
+  </div>
+  {% endfor %}
+  {% endif %}
+
+</html>
