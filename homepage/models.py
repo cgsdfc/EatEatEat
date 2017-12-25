@@ -27,6 +27,8 @@ class DishInstance(models.Model):
         )
     dish=models.ForeignKey(Dish, on_delete=models.CASCADE)
     status=models.CharField(max_length=2, choices=DISH_STATUS)
+    def __str__(self):
+        return 'Instance of ' + self.dish.name
 
 def restaurant_logo_path(instance, filename):
     """ retrieve the image of the logo of a restaurant """
@@ -48,4 +50,8 @@ class ResInstance(models.Model):
     """
     restaurant=models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     location=models.TextField(help_text='Where is this restaurant?')
+    telephone=models.CharField(max_length=100, help_text='telephone number')
+    grade=models.IntegerField(default=0)
+    def __str__(self):
+        return '{0} {1}'.format(self.location, self.restaurant.name)
 
