@@ -1,4 +1,6 @@
 from django.db import models
+from django.core.exceptions import ValidationError
+from django.utils.translation import gettext_lazy as _
 
 # what happened
 def dish_img_path(instance, filename):
@@ -44,6 +46,10 @@ class Restaurant(models.Model):
     def __str__(self):
         return self.name
 
+def validate_grade(grade):
+    if (grade < 1 or grade > 5):
+        raise ValidationError(_('%(grade) is not 1-5'), params={'grade':grade})
+
 class ResInstance(models.Model):
     """
     A restaurant instance physically
@@ -51,7 +57,7 @@ class ResInstance(models.Model):
     restaurant=models.ForeignKey(Restaurant, on_delete=models.CASCADE)
     location=models.TextField(help_text='Where is this restaurant?')
     telephone=models.CharField(max_length=100, help_text='telephone number')
-    grade=models.IntegerField(default=0)
+    grade=models.IntegerField(default=0, validators=[validate_grade])
     def __str__(self):
         return '{0} {1}'.format(self.location, self.restaurant.name)
 

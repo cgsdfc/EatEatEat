@@ -1,0 +1,11 @@
+<html>
+
+  {% if not dishes %}
+  <p>No Dishes available</p>
+  {% else %}
+  {% for dish in dishes %}
+  <img src="{{ dish.image.url}}" width="{{ dish.image.width }}" height="{{ dish.image.height }}" alt="img"> {{ dish.name }} </img>
+  {% endfor %}
+  {% endif %}
+
+</html>
