@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.exceptions import ValidationError
 from django.utils.translation import gettext_lazy as _
+from django.urls import reverse
 
 # what happened
 def dish_img_path(instance, filename):
@@ -15,6 +16,9 @@ class Dish(models.Model):
     owner=models.ForeignKey('Restaurant', default=None, on_delete=models.CASCADE);
     name=models.CharField(max_length=100)
     desc=models.TextField(verbose_name='description', help_text='How does this dish taste?')
+    def get_absolute_url(self):
+        return reverse('dish-detail', args=[str(self.id)])
+
     def __str__(self):
         return self.name
 
@@ -43,6 +47,9 @@ class Restaurant(models.Model):
     name=models.CharField(max_length=10)
     logo=models.ImageField(upload_to=restaurant_logo_path)
     desc=models.TextField(verbose_name='description', help_text='Restaurant description')
+    def get_absolute_url(self):
+        return reverse('restaurant-detail', args=[str(self.id)])
+
     def __str__(self):
         return self.name
 

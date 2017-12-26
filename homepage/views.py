@@ -14,4 +14,9 @@ class DishesListView(ListView):
 class DishesDetailView(DetailView):
     model=Dish
 
+class RestaurantsListView(ListView):
+    model=Restaurant
+
+class RestaurantsDetailView(DetailView):
+    model=Restaurant
 

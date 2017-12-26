@@ -1,0 +1,6 @@
+{% extends "homepage/basic-detail.html" %}
+{% block content %}
+<h1><strong>{{object.name}}</strong></h1>
+<img src="{{ object.logo.url }}" alt="logo of {{ object.name }}" class="img-responsive img-rounded"/>
+<p>{{object.desc}}</p>
+{% endblock %}

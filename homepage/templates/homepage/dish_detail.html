@@ -1,1 +1,7 @@
-{% if 
+{% extends "homepage/basic-detail.html" %}
+{% block content %}
+<div>
+  <p>{{ object.desc }}</p>
+  <p><a href="{{ object.owner.get_absolute_url }}">From {{ object.owner.name }}</a>
+</div>
+{% endblock %}
