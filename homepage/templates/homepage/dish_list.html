@@ -5,8 +5,10 @@
   {% else %}
   {% for dish in dish_list %}
   <div>
-    <a href="{{ dish.get_absolute_url }}">{{ dish.name }}</a>
-    <img src="{{ dish.image.url}}" width="{{ dish.image.width }}" height="{{ dish.image.height }}" alt="img"></img>
+    <h2><a href="{{ dish.get_absolute_url }}">{{ dish.name }}</a></h2>
+    <div>
+      <img src="{{ dish.image.url}}" width="100" height="100" alt="img"></img>
+    </div>
   </div>
   {% endfor %}
   {% endif %}
