@@ -1,3 +1,8 @@
+<h1><strong>All Restaurants We have</strong></h1>
+
 {% for object in object_list %}
-<li><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></li>
+<div>
+  <h2><a href="{{ object.get_absolute_url }}">{{ object.name }}</a></h2>
+  <img src="{{ object.logo.url }}" height="200" width="200"/>
+</div>
 {% endfor %}
