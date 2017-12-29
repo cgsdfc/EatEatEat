@@ -9,12 +9,14 @@ def index(request):
     return render(request, 'homepage/index.html', context={ 'dishes': dishes })
 
 class DishesListView(ListView):
+    paginate_by=10
     model=Dish
 
 class DishesDetailView(DetailView):
     model=Dish
 
 class RestaurantsListView(ListView):
+    paginate_by=10
     model=Restaurant
 
 class RestaurantsDetailView(DetailView):
