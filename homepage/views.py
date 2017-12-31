@@ -6,7 +6,7 @@ from django.views.generic.detail import DetailView
 
 def index(request):
     dishes = Dish.objects.all()
-    return render(request, 'homepage/index.html', context={ 'dishes': dishes })
+    return render(request, 'homepage/first_page.html', context={ 'dishes': dishes })
 
 class DishesListView(ListView):
     paginate_by=10

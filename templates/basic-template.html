@@ -1,0 +1,55 @@
+<!-- This template is copied and modified from 
+  the common part of most the bootstrap example.
+  The relative paths of the static files are replaced
+  with django's load static so that django can find them
+  in project/static/.
+  This file aim to be a container of all the necessary but
+  verbose things and provide a consistent feel to user as they
+  say in the tutorial.
+  !-->
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <!-- Help poor IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    {%block title %}
+    <!-- the default title !-->
+    <title>EatEatEat A fast food ordering delivering site</title>
+    {% endblock %}
+
+    <!-- Bootstrap core CSS -->
+    <link href="{% static "css/bootstrap.min.css" %}" rel="stylesheet">
+
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <link href="{% static "assets/css/ie10-viewport-bug-workaround.css" %}" rel="stylesheet"> 
+
+    {% block custom_css %}
+    <!-- Default is nothing special -->
+    {% endblock %}
+
+    <script src="{% static "assets/js/ie-emulation-modes-warning.js" %}"></script>
+  </head>
+
+  {% block content %}
+  <!-- we have an empty body as a default here !-->
+  <body></body>
+  {% endblock %}
+
+  <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="{% static "assets/js/vendor/jquery.min.js" %}"><\/script>')</script>
+    <script src="{% static "js/bootstrap.min.js" %}"></script>
+    <!-- Again IE stuffs shipped with bootstrap -->
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="{% static "assets/js/ie10-viewport-bug-workaround.js" %}"></script>
+    </body>
+</html>
