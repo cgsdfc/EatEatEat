@@ -1,38 +1,36 @@
 {% extends "basic-template.html" %}
 {% block content %}
 <title>EatEatEat Order your delicious food in a second</title>
-<body>
-  <div>
-    <h1 align=center>What is EatEatEat?</h1>
-    <p>EatEatEat is a fast food delivery site where you can rush in and pick
-    your favourite food from the restaurants from <em>all over the world</em>.
-    </p>
-  </div>
-  <div>
-    <h2>Our Belief</h2>
-    <p>We believe that in the realm of fast food delivery these things are the most important:</p>
-    <p>The variety of fast food should be as vast as possible.
-    The makers of this site were deeply addictive to fast food when they were working
-    for a Lab as their life was too busy for a well schedualed meal at the school canteen.
-    What's worse, at that time the available kinds of dishes and restaurants were
-    very limited, so their receipts had to repeat very often, which hurt their appetite.
-    We made this site to prevent tragedy like this from happening on you once and for good.</p>
-    <p>The time you have to wait for the arrival of the food should be minimized.
-    Waiting is a waste of your precious time to get your food. Now that you are <em>that busy</em>
-    to have fast food, we dare not waste you a single minute. For that, we
-    optimize every stage of the process to bring the food to you as fast as possible.
-    </p>
-  </div>
+<div>
+  <h1 align=center>What is EatEatEat?</h1>
+  <p>EatEatEat is a fast food delivery site where you can rush in and pick
+  your favourite food from the restaurants from <em>all over the world</em>.
+  </p>
+</div>
+<div>
+  <h2>Our Belief</h2>
+  <p>We believe that in the realm of fast food delivery these things are the most important:</p>
+  <p>The variety of fast food should be as vast as possible.
+  The makers of this site were deeply addictive to fast food when they were working
+  for a Lab as their life was too busy for a well schedualed meal at the school canteen.
+  What's worse, at that time the available kinds of dishes and restaurants were
+  very limited, so their receipts had to repeat very often, which hurt their appetite.
+  We made this site to prevent tragedy like this from happening on you once and for good.</p>
+  <p>The time you have to wait for the arrival of the food should be minimized.
+  Waiting is a waste of your precious time to get your food. Now that you are <em>that busy</em>
+  to have fast food, we dare not waste you a single minute. For that, we
+  optimize every stage of the process to bring the food to you as fast as possible.
+  </p>
+</div>
 
-  <div>
-    <h2>Have a look at what we provide</h2>
-  </div>
-  <div>
-    <p><a href="{% url 'dishes' %}">Delicious Food from restaurants all over the world.</a>
-    Your beloved fried chicken included.</p>
-    <p><a href="{% url 'restaurants' %}">Popular restaurants we have here.</a> Check it out!</p>
-    <p><a href="{% url 'login' %}">Login</a></p>
-    <p><a href="{% url 'logout' %}">Logout</a></p>
-  </div>
-</body>
+<div>
+  <h2>Have a look at what we provide</h2>
+</div>
+<div>
+  <p><a href="{% url 'dishes' %}">Delicious Food from restaurants all over the world.</a>
+  Your beloved fried chicken included.</p>
+  <p><a href="{% url 'restaurants' %}">Popular restaurants we have here.</a> Check it out!</p>
+  <p><a href="{% url 'login' %}">Login</a></p>
+  <p><a href="{% url 'logout' %}">Logout</a></p>
+</div>
 {% endblock %}

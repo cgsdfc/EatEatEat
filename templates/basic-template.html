@@ -19,7 +19,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    {%block title %}
+    {% block title %}
     <!-- the default title !-->
     <title>EatEatEat A fast food ordering delivering site</title>
     {% endblock %}
@@ -30,16 +30,15 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <link href="{% static "assets/css/ie10-viewport-bug-workaround.css" %}" rel="stylesheet"> 
 
-    {% block custom_css %}
+    {% block private_style %}
     <!-- Default is nothing special -->
     {% endblock %}
 
     <script src="{% static "assets/js/ie-emulation-modes-warning.js" %}"></script>
   </head>
 
+  <body>
   {% block content %}
-  <!-- we have an empty body as a default here !-->
-  <body></body>
   {% endblock %}
 
   <!-- Bootstrap core JavaScript
@@ -51,5 +50,5 @@
     <!-- Again IE stuffs shipped with bootstrap -->
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="{% static "assets/js/ie10-viewport-bug-workaround.js" %}"></script>
-    </body>
+  </body>
 </html>
