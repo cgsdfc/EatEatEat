@@ -1,7 +1,9 @@
 {% extends "basic-template.html" %}
 {% load static %}
 <!-- Custom styles for this template -->
+{% block private_style %}
 <link href="{% static "homepage/carousel.css" %}" rel="stylesheet">
+{% endblock %}
 {% block content %}
 <!-- NAVBAR
   ================================================== -->
@@ -22,7 +24,7 @@
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="{% url 'homepage' %}">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
                 <li class="dropdown">
@@ -56,36 +58,28 @@
           <li data-target="#myCarousel" data-slide-to="2"></li>
         </ol>
         <div class="carousel-inner" role="listbox">
+
+
+          {% for object in restaurant_list %}
+          {% if forloop.counter < 4 %}
+          {# Only render the first 3 restaurant #}
+          {% if forloop.counter == 1 %}
           <div class="item active">
-            <img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide">
-            <div class="container">
-              <div class="carousel-caption">
-                <h1>Example headline.</h1>
-                <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Sign up today</a></p>
-              </div>
-            </div>
-          </div>
+            {% else %}
           <div class="item">
-            <img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide">
+            {% endif %}
+            {# Use cycle tag to put img class into right place #}
+            <img  class="{% cycle 'first-slide' 'second-slide' 'third-slide' as slide_name %}" src="{{ object.logo.url }}" alt="{{ object.name }}">
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                <h1>{{ object.name }}</h1>
+                <p>{{ object.text }}</p>
+                <p><a class="btn btn-lg btn-primary" href="{{ object.get_absolute_url }}" role="button">Detail</a></p>
               </div>
             </div>
           </div>
-          <div class="item">
-            <img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide">
-            <div class="container">
-              <div class="carousel-caption">
-                <h1>One more for good measure.</h1>
-                <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                <p><a class="btn btn-lg btn-primary" href="#" role="button">Browse gallery</a></p>
-              </div>
-            </div>
-          </div>
+          {% endif %}
+          {% endfor %}
         </div>
         <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>

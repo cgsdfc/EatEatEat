@@ -5,7 +5,7 @@ from .views import RestaurantsListView, RestaurantsDetailView
 from .views import Signin, LearnMore
 
 urlpatterns=[
-        path('', index),
+        path('', index, name='homepage'),
         path('dishes/', DishesListView.as_view(), name='dishes'),
         path('dishes/<int:pk>/', DishesDetailView.as_view(), name='dish-detail'),
         path('restaurants/', RestaurantsListView.as_view(), name='restaurants'),
