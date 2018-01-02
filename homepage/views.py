@@ -25,6 +25,9 @@ class RestaurantsDetailView(DetailView):
 def Signin(request):
     return render(request, 'homepage/signin.html', context={})
 
+def About(request):
+    return render(request, 'homepage/about.html', context={})
+
 def LearnMore(request):
     dish_list=Dish.objects.all()
     restaurant_list=Restaurant.objects.all()
