@@ -22,3 +22,5 @@ class RestaurantsListView(ListView):
 class RestaurantsDetailView(DetailView):
     model=Restaurant
 
+def Signin(request):
+    return render(request, 'homepage/signin.html', context={})

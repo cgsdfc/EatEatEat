@@ -6,7 +6,7 @@
 a,
 a:focus,
 a:hover {
-  color: #fff;
+  color: #1ff;
 }
 
 /* Custom default button */
@@ -27,7 +27,7 @@ a:hover {
 html,
 body {
   height: 100%;
-  background-color: #333;
+  background-color: #123;
 }
 body {
   color: #fff;
@@ -91,8 +91,8 @@ body {
 .masthead-nav > .active > a,
 .masthead-nav > .active > a:hover,
 .masthead-nav > .active > a:focus {
-  color: #fff;
-  border-bottom-color: #fff;
+  color: #f31;
+  border-bottom-color: #ff1;
 }
 
 @media (min-width: 768px) {

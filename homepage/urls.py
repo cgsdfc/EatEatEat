@@ -2,6 +2,7 @@ from django.urls import path, include
 from .views import index
 from .views import DishesListView, DishesDetailView
 from .views import RestaurantsListView, RestaurantsDetailView
+from .views import Signin
 
 urlpatterns=[
         path('', index),
@@ -9,7 +10,7 @@ urlpatterns=[
         path('dishes/<int:pk>/', DishesDetailView.as_view(), name='dish-detail'),
         path('restaurants/', RestaurantsListView.as_view(), name='restaurants'),
         path('restaurants/<int:pk>', RestaurantsDetailView.as_view(), name='restaurant-detail'),
-        path('accounts/', include('django.contrib.auth.urls')),
+        path('signin/', Signin, name='signin'),
 
         ]
 
